@@ -6,7 +6,7 @@ console.log("Jay Shree Ganesh");
 
     1. Primitive
     2. Object
-    3. Sepecial Data Types
+    3. Special Data Types
 
 */
 
