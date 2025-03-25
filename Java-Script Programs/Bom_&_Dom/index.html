@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM & DOM</title>
+</head>
+<body>
+    <h1 align="center" >Browser Object Model</h1>
+    <h3>BOM Alert</h3>
+    <script>
+        function alertFunction(){
+            window.alert("Veer Singh Lodhi");
+        }
+    </script>
+    <input type="button" value="Alert" onclick="alertFunction()">
+    <h3>BOM Confirm </h3>
+    <script>
+        function confirmFunction(){
+            ans=confirm("Do you want continue?");
+            if(ans)
+            {
+                alert(ans+" You clicked OK");
+            }else{
+                alert(ans+" You Clicked Cancel");
+            }
+
+        }
+    </script>
+    <input type="button" value="Confirm" onclick="confirmFunction()">
+    <h3>BOM prompt</h3>
+    <script>
+        const promptFunction=()=>{
+            input=prompt("What is your name?","VEER");
+            document.getElementById('show').innerHTML="<h1>"+input+"</h1>";
+        }
+    </script>
+    <input type="button" value="Prompt" onclick="promptFunction()">
+
+    <script>
+        const openFunction=()=>{
+            window.open("","","width=800,height=600");
+        }
+    </script>
+    <h3>Open Method</h3>
+    <input type="button" value="Open Method" onclick="openFunction()">
+
+    <h3>The setTimeOut() and setInterval() are both methods of the HTML DOM Window object.</h3>
+    <h3>Windows Object SetTimeout() method</h3>
+    <script>
+        count=0;
+        const setTimeOutMethod=()=>{
+            time1=setTimeout("alert('count is '+count);count++;",2000);
+        }
+        const setIntervalMethod=()=>{
+            myTime=setInterval(getData,1000);
+        }
+        const getData=()=>{
+            d=new Date();
+            document.getElementById('show').innerHTML= d.toLocaleTimeString();
+        }
+    </script>
+    <h3>SET TIME OUT METHOD</h3>
+    <input type="button" value="Set Time Out Method" onclick="setTimeOutMethod()">
+    <input type="button" onclick="clearTimeout(time1)" value="Stop it">
+    <hr/>
+    <h3>Set Interval method</h3>
+    <input type="button" onclick="setIntervalMethod()" value="setInterval Method">
+    <input type="button" onclick="clearTimeout(myTime)" value="Stop it">
+
+    <div id="show">
+
+    </div>
+</body>
+</html>
