@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head></head>
+<body>
+<h3>BOM windows alert () method</h3> 
+<script>
+function f1()
+	{
+		window.alert("hello"); // alert("hello")
+    }
+</script>
+<input type="button" value="Click" onclick="f1()"/>
+<hr />
+
+<h3>BOM windows Object confirm () method</h3>
+<script>
+function f2(){ 
+//confm = new Boolean;   
+confm = confirm("Are u sure?");//confirmation   
+        if(confm== true)  
+        {    
+            alert(confm + "ok");    
+        }    
+        else  
+        {    
+            alert(confm+"cancel");    
+        }    
+        }
+</script>  
+<input type="button" value="Check" onclick="f2()"/>
+<hr />  
+
+<h3>BOM windows Object Prompt () Method</h3>  
+<script>    
+function f3()  
+    {    
+	input_me = prompt("Who are you?","ABC");// input box    
+  
+    alert("I am "+input_me);    
+    }    
+</script>    
+<input type="button" value="click" onclick="f3()">
+<hr />
+
+<h3>BOM window Open() Method</h3>  
+<script>    
+function f4()  
+    {
+	window.open("js50.html","_blank","toolbar=yes,location=yes,directories=no,status=yes,menubar=yes,scrollbars=yes,resizable=no,copyhistory=yes,width=400,height=300");
+	//open("filename.extn","_target","features")	
+   }    
+</script>    
+<input type="button" value="Click_to_Next" onclick="f4()"/>
+<hr />
+
+<h3>The setTimeout() and setInterval() 
+are both methods of the HTML DOM Window object.</h3>
+<h3>Windows Objects SetTimeout() Methods </h3>  
+<script>
+count=0;    
+function f5()  
+        {    
+        time1=setTimeout("alert('This will work only once after 2 seconds'+ count); count++;",2000);
+		  //setTimeout("function name or code",millisec)    
+        }
+function f6()
+		{
+ 		myTym = setInterval(myTymer, 1000);
+		//setInterval("function name or code",milliseconds)
+		}
+function myTymer() 
+{
+  dt = new Date();
+  document.getElementById("para1").innerHTML =dt.toLocaleTimeString();
+}    
+</script>     
+<input type="button" value="click" onclick="f5()">
+<input type="button" onclick="clearTimeout(time1)" value="Stop it"/>
+<hr/>
+<p id="para1"></p>
+<input type="button" value="click here" onclick="f6()" />
+<input type="button" onclick="clearInterval(myTym)" value="Stop it"/>
+<hr />
+
+<h3>Browser Object Model (BOM) name properties</h3>  
+<script>   
+function f7()   
+        {  
+         window.name = "myWindow1";  
+         document.write("The Name is :",window.name); //windows name  
+        }  
+</script>     
+<input type="button" value="Click_window_name" onclick="f7()">
+
+<hr />
+ 
+<h3>Browser Object Model (BOM) properties</h3>  
+<script>   
+function f8()   
+       {  
+         document.write("The innerHeight is :"+window.innerHeight+"<br>"); //inner height  
+         document.write("The innerWidth is :"+window.innerWidth); // inner width   
+        }  
+function f9()
+{
+          h = window.outerHeight;
+          w = window.outerWidth;
+          window.document.write("Height and width of the window are: "+h+" and "+w)
+}
+</script>    
+<input type="button" value="innerHeight_Width" onclick="f8()">
+<input type="button" value="OuterHeight_Width" onclick="f9()">
+<hr />
+
+<h3>BOM blur focus</h3>
+<script>
+function openWin() {
+  win1 = window.open("", "", "width=400, height=200");
+}
+function blurWin() {
+  win1.blur();
+}
+function focusWin() {
+  win1.focus();
+}
+function closeWin() {
+  win1.close();
+}
+function createWindow() {
+      win = window.open("", "My Window", "width=500, height=200,screenX=100,screenY=100");   // window properties
+      isclose = win.closed;//0 or 1
+      name1 = win.name; // writing in the current document
+      document.write(isclose +"<br>");
+      document.write(name1 +"<br>");
+      document.write(win.screenY +"<br>");
+      document.write(win.screenX +"<br>");   // we can access the new window document like this
+      win.document.write("Hello World!");
+   }
+</script>
+<input type="button" value="Open new window" onclick="openWin()">
+<input type="button" value="Blur new window" onclick="blurWin()">
+<input type="button" value="Focus new window" onclick="focusWin()">
+<input type="button" value="close new window" onclick="closeWin()">
+<input type="button" value="New window" onclick="createWindow()">
+<hr	/>       
+
+
+<pre>
+Method 	 		      Description
+window.alert() 	   Creates dialog box with message and an OK button
+window.blur() 	   Remove focus from window
+window.close() 	   Closes a browser window
+window.confirm()   Creates dialog box with message, an OK button and a cancel button
+window.getComputedStyle() Get CSS styles applied to an element
+window.moveTo(x,y) Move a window's left and top edge to supplied coordinates
+window.open() 	   Opens new browser window with URL specified as parameter
+window.print() 	   Tells browser that user wants to print contents of current page
+window.prompt()    Creates dialog box for retrieving user input
+window.scrollBy()  Scrolls the document by the specified number of pixels
+window.scrollTo()  Scrolls the document to the specified coordinates
+window.setInterval() Do something repeatedly at specified intervals
+window.setTimeout()Do something after a specified amount of time
+window.stop() 	   Stop window from loading
+</pre>
+  </body>
+</html>
