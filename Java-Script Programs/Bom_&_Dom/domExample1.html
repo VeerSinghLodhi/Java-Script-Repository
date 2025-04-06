@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example of getElementByClassName</title>
+    
+</head>
+
+<body>
+    <script>
+        const getFun = () => {
+           // alert("Button Clicked!");
+           console.log("Button clicked!!");
+            let annotations = document.getElementsByClassName('annotation');
+            for (let i = 0; i < annotations.length; i++) {
+                annotations[i].style.color="teal";
+                console.log("I is "+i);
+            }
+        }
+    </script>
+    <div>
+        <h1>Spring Boot Annotations</h1>
+        <h3 class="annotation">1 @Controller</h3>
+        <h3 class="annotation">2 @RequestMapping</h3>
+        <h3 class="annotation">3 @ResponseBody</h3>
+        <h3 class="annotation">4 @PostMapping</h3>
+        <h3 class="annotation">5 @GetMapping</h3>
+        <h3 class="annotation">6 @PutMapping</h3>
+        <h3 class="annotation">7 @DeleteMapping</h3>
+    </div>
+    <button onclick="getFun()">Convert into Bold </button>
+</body>
+
+</html>
