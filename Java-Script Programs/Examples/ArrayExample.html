@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Example</title>
+</head>
+<body>
+    <input type="text" name="getText" id="getText" required>
+    <button onclick="setText()">Set Text</button>
+    <h1 id="setT"></h1>
+    <button onclick="getChangeFont()">Change Font</button>
+    <button onclick="getChangeFontColor()">Chanage Font Color</button>
+    <script>
+        const setText=()=>{
+            text=document.getElementById('getText').value;
+            document.getElementById('setT').innerHTML=text;
+        }
+        i=0;
+        const getChangeFont=()=>{
+            fontFace=new Array("arial","tahoma","vivaldi");
+            document.getElementById('setT').style.fontFamily=fontFace[i++];
+            if(i==3)
+                i=0;
+        }
+        j=0;
+        const getChangeFontColor=()=>{
+            colors=new Array("white","black","teal","yellow","orange");
+            document.getElementById('setT').style.color=colors[j++];
+            if(j==5)
+                j=0;
+        }
+    </script>
+</body>
+</html>
