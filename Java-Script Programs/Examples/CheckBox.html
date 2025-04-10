@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Box</title>
+</head>
+
+<body>
+    <h1>Programming Languages</h1>
+    <label>Select your Programming Languages</label>
+    </br>
+    <input type="checkbox" name="p" id="p" value="c">C
+    <input type="checkbox" name="p" id="p" value="cpp">C++
+    <input type="checkbox" name="p" id="p" value="java">Java
+    <input type="checkbox" name="p" id="p" value="js">Java script
+    <input type="checkbox" name="p" id="p" value="python">Python
+    <input type="button" onclick="fun1()" value="Ok">
+    <h4 id="show"></h4>
+    <script>
+        const fun1 = () => {
+            text = "";
+            let arr = document.getElementsByName('p');
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].checked) {
+                    text += arr[i].value + "  ";
+                }
+            }
+            document.getElementById('show').innerHTML = text;
+
+        }
+    </script>
+</body>
+
+</html>
