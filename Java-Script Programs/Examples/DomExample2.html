@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example of getElementsByClassName</title>
+</head>
+<body>
+    <div id="parent-div">
+        <p>Hello World-1</p>
+        <h4 class="test">Hello World-2</h4>
+        <p>Hello World-3</p>
+        <p>Hello World-4</p>
+    </div>
+    <div>
+        <span class="test">Hello World-5</span>
+        <p>Hello World-6</p>
+        <p>Hello World-7</p>
+        <p>Hello World-8</p>
+    </div>
+    <script>
+        var pdiv=document.getElementById('parent-div');
+        var test=pdiv.getElementsByClassName('test');// Collection of all tag where we used test class.
+        alert(test)
+
+        var testTarget=document.getElementsByClassName('test')[1]; // like array
+        alert(testTarget);
+    </script>
+
+</body>
+</html>
