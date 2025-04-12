@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HTMLCollection Object</title>
+</head>
+
+<body>
+    <h1>The HTML Collection Object</h1>
+    <p>Loop through each HTML element on this page, and write its tag name: </p>
+    <script>
+        at = document.getElementsByTagName("*");
+        len = at.length;
+        for (i = 0; i < len; i++) {
+            document.write(at[i].tagName + "</br>");
+        }
+    </script>
+
+    <h1>HTMLCollection item() Method</h1>
+    <p>The item() method returns the element at the specified index.</p>
+    <p>Click the button to return the content of the first P element on this page:</p>
+    <input type="button" onclick="fun1()" value="Alert innerHTML of P">
+    <script>
+        const fun1 = () => {
+            var x = document.getElementsByTagName('P');
+            alert(x.item(0).innerHTML);
+        }
+    </script>
+
+    <h1>HTMLCollection namedItem() Method</h1>
+    <p id="p1">The namedItem() method returns the
+        element with the specified ID or name.</p>
+    <p>Click the button to return the content of the P element with ID "myElement":</p>
+    <input type="button" onclick="fun2()" value="Text of P">
+    <script>
+        const fun2 = () => {
+            var x = document.getElementsByTagName('p').namedItem('p1');
+            alert(x.innerHTML);
+        }
+    </script>
+    <h2>Style method</h2>
+    <input type="button" onclick="fun3()" value="click here" />
+    <div id="myDIV">
+        <p>JavaScript methods are actions that can be performed on objects.
+            A JavaScript method is a property containing a function definition.
+            A method is a function that belongs to a class. In JavaScript,
+            however, a method is a function that belongs to an object.
+            Everything in JavaScript is an object; a function is an object;
+            an Array is an object.</p>
+    </div>
+    <script>
+        const fun3 = () => {
+            document.getElementById('myDIV').style.columns = "200px 3";
+            document.getElementById('myDIV').style.border = "20px solid teal";
+        }
+    </script>
+</body>
+
+</html>
