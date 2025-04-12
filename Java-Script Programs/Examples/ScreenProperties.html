@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property of JavaScript Screen Object </title>
+</head>
+<body>
+ <pre>
+ Property            Description
+ -----------------------------------------------------------------------------------
+ width               Return the width of the Screen 
+ Height              Return the Height of the Screen
+ availWidth          Return the Availabel Width
+ availHeight         Return the AvailLabel Height
+ colorDepth          Return the color depth
+ pixelDepth          Return the pixel depth.
+ </pre>
+ <script>
+    document.write("</br>Screen Width : "+screen.width);
+    document.write("</br>Screen Height : "+screen.height);
+    document.write("</br>Availabel Width : "+screen.availWidth);
+    document.write("</br>Availabel Height : "+screen.availHeight);
+    document.write("</br>Color Depth : "+screen.colorDepth);
+    document.write("</br> Pixel Depth : "+screen.pixelDepth);
+ </script>
+</br><span>----------------------------------</span>
+</br>
+ <input onclick="openwindow()" type="button" value="Create Window">
+</br><span>----------------------------------</span>
+</br>
+ <input onclick="resizewindow()" type="button" value="Resize Window">
+</br><span>----------------------------------</span>
+</br>
+<input onclick="movewindow()" type="button" value="Move Window">
+</br><span>----------------------------------</span>
+</br>
+<input onclick="newDoc()" type="button" value="New Document">
+</br><span>----------------------------------</span>
+</br>
+ <script>
+    var win;
+    const openwindow=()=>{
+        win=window.open('','','width=100,height=100');
+        win.focus();
+    }
+    const resizewindow=()=>{
+        win.resizeBy(300,400);
+        win.focus();
+    }
+    const movewindow=()=>{
+        win.moveBy(250,250);
+        win.focus();
+    }
+    const newDoc=()=>{
+        window.location.assign("ArrayExample.html");
+    }
+ </script>
+
+</body>
+</html>
