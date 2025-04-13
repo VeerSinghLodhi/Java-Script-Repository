@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuerySelector & QuerySelectorAll</title>
+</head>
+
+<body>
+    <h1>1. Query Selector</h1>
+    <input type="button" value="Change Color" onclick="fun1()">
+    <h1>-------------------------------------------</h1>
+    <!-- Highlighting the First Heading on a Page
+    Using querySelector, we can target and modify only the first heading that matches the given selector.     ( 0th->Index element)   -->
+    <script>
+        const fun1 = () => {
+            var x = document.querySelector('h1');
+            x.style.color = "red";
+        }
+    </script>
+    <h1>2. Query Selector</h1>
+    <ul>
+        <li class="list-item">List 1</li>
+        <li class="list-item">List 2</li>
+        <li class="list-item">List 3</li>
+        <li class="list-item">List 4</li>
+        <li class="list-item">List 5</li>
+    </ul>
+    <input type="button" value="Change Background Color" onclick="fun2()">
+    <input type="button" value="Change Background Color all elements" onclick="fun3()">
+    <h1>--------------------------------------------</h1>
+    <script>
+        const fun2 = () => {
+            s = document.querySelector('.list-item');
+            s.style.backgroundColor = "teal";
+            // If we want to select only the first .list-item and change its BackgroundColor to teal:
+        }
+        const fun3=()=>{
+           const  v=document.querySelectorAll('.list-item');   // Array like Object 
+            v.forEach(item=>item.style.backgroundColor="teal");
+            //If we want to select all .list-item elements,and change their backgrounColor to teal ;
+        }
+    </script>
+</body>
+
+</html>
