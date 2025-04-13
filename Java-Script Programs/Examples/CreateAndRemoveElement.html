@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and Removing Elements</title>
+</head>
+
+<body>
+    <h1>Creating and Removing Elements</h1>
+    <p>DOM manipulation allows developers to dynamically add or remove elements from a webpage. This is useful for
+        interactive applications such as form handling, to-do lists, dynamic menus, and more.</p>
+    <ol>
+        <li>Creating Elements in the DOM -
+            JavaScript provides the document.createElement() method to create new elements dynamically. These elements
+            can then be customized with text, attributes, styles, or event listeners before being added to the DOM.
+            <ul> Steps to Create an Element:
+                <li>Use document.createElement("tagName") to create a new element.</li>
+                <li>Set properties like textContent or innerHTML.</li>
+                <li>Use appendChild() or insertBefore() to add it to the document.</li>
+            </ul>
+        </li>
+    </ol>
+    <h2>Adding a new Programming language</h2>
+    <input type="text" name="textField" id="textField">
+    <input type="button" value="Add New language" onclick="addNewLanguage()">
+    <ul id="languages">
+        <li>C language</li>
+        <li>C++ language</li>
+    </ul>
+    <script>
+        const addNewLanguage = () => {
+            languageName = document.getElementById('textField');
+            text = languageName.value;
+            text = text.trim();
+            if (text.length == 0) {
+                alert("Please Enter a Programmng language!");
+                return;
+            }
+            let newLanguage = document.createElement('li');
+            newLanguage.textContent = text;
+            document.getElementById('languages').appendChild(newLanguage);
+        }
+    </script>
+</body>
+
+</html>
