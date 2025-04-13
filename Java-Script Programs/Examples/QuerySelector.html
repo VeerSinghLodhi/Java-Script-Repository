@@ -8,18 +8,30 @@
 </head>
 
 <body>
+    <!-- Example showing the use of querySelector and querySelectorAll -->
+    
+    <!-- Header for the first example -->
     <h1>1. Query Selector</h1>
+    
+    <!-- Button to trigger the function that changes the color of the first <h1> element -->
     <input type="button" value="Change Color" onclick="fun1()">
+    
+    <!-- Separator for visual clarity -->
     <h1>-------------------------------------------</h1>
-    <!-- Highlighting the First Heading on a Page
-    Using querySelector, we can target and modify only the first heading that matches the given selector.     ( 0th->Index element)   -->
+    
+    <!-- Script containing JavaScript functions -->
     <script>
+        // Function to change the text color of the first <h1> element on the page
         const fun1 = () => {
-            var x = document.querySelector('h1');
-            x.style.color = "red";
+            var x = document.querySelector('h1'); // Selects the first <h1> element
+            x.style.color = "red"; // Changes its color to red
         }
     </script>
+    
+    <!-- Another <h1> element for demonstration -->
     <h1>2. Query Selector</h1>
+    
+    <!-- Unordered list with multiple items, all having the same class -->
     <ul>
         <li class="list-item">List 1</li>
         <li class="list-item">List 2</li>
@@ -27,19 +39,27 @@
         <li class="list-item">List 4</li>
         <li class="list-item">List 5</li>
     </ul>
+    
+    <!-- Button to trigger the function that changes the background color of the first list item -->
     <input type="button" value="Change Background Color" onclick="fun2()">
+    
+    <!-- Button to trigger the function that changes the background color of all list items -->
     <input type="button" value="Change Background Color all elements" onclick="fun3()">
+    
+    <!-- Separator for visual clarity -->
     <h1>--------------------------------------------</h1>
+    
     <script>
+        // Function to change the background color of the first list item
         const fun2 = () => {
-            s = document.querySelector('.list-item');
-            s.style.backgroundColor = "teal";
-            // If we want to select only the first .list-item and change its BackgroundColor to teal:
+            s = document.querySelector('.list-item'); // Selects the first element with class "list-item"
+            s.style.backgroundColor = "teal"; // Changes its background color to teal
         }
-        const fun3=()=>{
-           const  v=document.querySelectorAll('.list-item');   // Array like Object 
-            v.forEach(item=>item.style.backgroundColor="teal");
-            //If we want to select all .list-item elements,and change their backgrounColor to teal ;
+        
+        // Function to change the background color of all list items
+        const fun3 = () => {
+           const v = document.querySelectorAll('.list-item'); // Selects all elements with class "list-item"
+           v.forEach(item => item.style.backgroundColor = "teal"); // Iterates through each item and changes its background color to teal
         }
     </script>
 </body>
