@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setAttribute & getAttribute</title>
+</head>
+
+<body>
+    <!-- Heading to describe the purpose of the page -->
+    <h1>Changing Element Attributes</h1>
+    
+    <!-- Description list explaining attribute manipulation methods -->
+    <ol>
+        <li>JavaScript allows you to modify an element’s attributes dynamically.
+            <ul>
+                <li>setAttribute(attribute, value) → Updates an attribute.</li>
+                <li>getAttribute(attribute) → Retrieves an attribute.</li>
+                <li>removeAttribute(attribute) → Removes an attribute.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <!-- Section to demonstrate setAttribute -->
+    <h1>1. <b>setAttribute</b></h1>
+    <h4>setAttribute(attribute) - Updating an Image Source Dynamically</h4>
+    <!-- Image element with initial source -->
+    <img id="getPic" src="Images/Rohit_Sharma.jpeg" width="200" height="200" style="display: block;">
+    <!-- Button to trigger the function to change the image source -->
+    <input id="btn1" type="button" value="Change Picture" style="margin: 50px;" onclick="fun1()" disabled>
+    
+    <script>
+        // Array containing the image paths
+        let imgs = ["Images/msd.jpg", "Images/Rohit_Sharma.jpeg", "Images/Virat_Kohli.jpeg"];
+        // Index to track the current image
+        let i = 0;
+
+        // Function to update the image source dynamically
+        const fun1 = () => {
+            // Get the image element
+            let x = document.getElementById('getPic');
+            // Update the source attribute of the image
+            x.setAttribute("src", imgs[i++]);
+            // Reset index if it exceeds the array length
+            if (i == imgs.length)
+                i = 0;
+        }
+    </script>
+
+    <!-- Section to demonstrate getAttribute -->
+    <h1>2. getAttribute(attribute) – Retrieving an attribute</h1>
+    <!-- Paragraph to display the retrieved image -->
+    <p id="show"></p>
+    <!-- Button to trigger the function to retrieve the image source -->
+    <input id="btn2" type="button" value="Get Image" onclick="fun2()" disabled> 
+
+    <script>
+        // Function to retrieve and display the current image source
+        const fun2 = () => {
+            // Get the image element
+            let img = document.getElementById('getPic');
+            // Retrieve the current source attribute
+            let imageSrc = img.getAttribute("src");
+            // Display the image in the paragraph
+            document.getElementById('show').innerHTML = "<img src='" + imageSrc + "'>";
+        }
+    </script>
+
+    <!-- Section to demonstrate removeAttribute -->
+    <h1>3. removeAttribute(attribute) – Removing an attribute</h1>
+    <!-- Button to remove the disabled property from btn1 -->
+    <input type="button" value="Remove Disabled Property from (Change Picture) Button" style="margin: 40px;" onclick="fun3()">
+    <!-- Button to remove the disabled property from btn2 -->
+    <input type="button" value="Remove Disabled Property from (Get Image) Button" style="margin: 40px;" onclick="fun4()">
+    <!-- Button to add the disabled property to btn1 -->
+    <input type="button" value="Add Disabled Property in (Change Picture) Button" style="margin: 40px;" onclick="fun5()">
+    <!-- Button to add the disabled property to btn2 -->
+    <input type="button" value="Add Disabled Property in (Get Image) Button" style="margin: 40px;" onclick="fun6()">
+
+    <script>
+        // Function to remove the disabled property from the first button
+        const fun3 = () => {
+            let btn1 = document.getElementById("btn1");
+            btn1.removeAttribute("disabled");
+        }
+
+        // Function to remove the disabled property from the second button
+        const fun4 = () => {
+            let btn2 = document.getElementById("btn2");
+            btn2.removeAttribute("disabled");
+        }
+
+        // Function to add the disabled property to the first button
+        const fun5 = () => {
+            let btn1 = document.getElementById("btn1");
+            btn1.setAttribute("disabled", "disabled");
+        }
+
+        // Function to add the disabled property to the second button
+        const fun6 = () => {
+            let btn2 = document.getElementById("btn2");
+            btn2.setAttribute("disabled", "disabled");
+        }
+    </script>
+</body>
+
+</html>
