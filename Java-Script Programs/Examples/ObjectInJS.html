@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object in Javascript</title>
+    <style>
+        /* Add your custom styles here */
+    </style>
+</head>
+<body>
+    <h1>Object in Java Script</h1>
+    <p>Objects in JavaScript, just as in many other
+        programming languages, can be compared to objects in real life.
+        The concept of objects in
+        JavaScript can be understood with real-life, tangible objects.
+    </p>
+
+    <p><b>Creating Objects in JavaScript.</b> <br>
+        There are 3 ways to create objects:
+    <ul>
+        <li>By object literal </li>
+        <li>By creating an instance of Object directly (using the new keyword) </li>
+        <li>By using an object constructor (using the new keyword)</li>
+    </ul>
+    </p>
+    <p> JavaScript object has properties associated with it.
+        A property of an object can be explained as a
+        variable that is attached to the object.
+        Object properties are basically the same as ordinary
+        JavaScript variables, except for the attachment to objects.
+        The properties of an object define the characteristics
+        of the object. You access the properties of an object
+        with a simple dot-notation:
+        <b> objectName.propertyName</b>
+    </p>
+    <hr />
+
+    <h2>Direct Method to Create an Object</h2>
+
+    <!-- Paragraph to display object details -->
+    <p id="showObject"></p>
+
+    <!-- Button to show object details -->
+    <input id="showButton" type="button" onclick="getObjectDetail()" value="Show Object Details">
+
+    <!-- Button to hide object details -->
+    <input id="hideButton" type="button" value="Hide Object Details" onclick="getClear()" style="display: none;">
+
+    <script>
+        // Create an object using the new keyword
+        employee = new Object();
+        employee.id = 101;
+        employee.name = "Krishna";
+        employee.address = "Sagar";
+        employee.salary = 40000;
+    </script>
+    <script>
+        // Get references to the buttons for toggling visibility
+        var showB = document.getElementById('showButton');
+        var hideB = document.getElementById('hideButton');
+
+        // Function to display the details of the employee object
+        const getObjectDetail = () => {
+            var x = document.getElementById('showObject');
+            x.style.display = "block";
+            x.innerHTML = "Employee id is " + employee.id +
+                "</br> Employee Name is " + employee.name +
+                "</br> Employee Address " + employee.address +
+                "</br> Employee Salary " + employee.salary;
+            showB.style.display = "none";
+            hideB.style.display = "inline";
+        }
+
+        // Function to hide the details of the employee object
+        const getClear = () => {
+            document.getElementById('showObject').style.display = "none";
+            hideB.style.display = "none";
+            showB.style.display = "inline";
+        }
+    </script>
+
+    <h2>2 Method to Create an Object: </h2>
+    <script>
+        // Define an object using object literal syntax
+        // Syntax: object_name = { Key: value };
+        person = {
+            // Object properties
+            firstName: "Veer",
+            lastName: "Lodhi",
+            gender: "Male",
+            age: 19,
+            // Method to get the full name of the person
+            getFullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+    </script>
+
+    <!-- Paragraph to display the person object details -->
+    <p id="showObj"></p>
+
+    <!-- Button to show the second object details -->
+    <input type="button" id="showBtn" onclick="getObj()" value="Show 2 Object Details">
+
+    <!-- Button to hide the second object details -->
+    <input type="button" id="hideBtn" onclick="getRemove()" value="Hide 2 Object Details" style="display: none;">
+
+    <script>
+        // Get references to the buttons for toggling visibility
+        var showBtn = document.getElementById('showBtn');
+        var hideBtn = document.getElementById('hideBtn');
+        var x = document.getElementById('showObj');
+
+        // Function to display the details of the person object
+        const getObj = () => {
+            x.style.display = "block";
+            x.innerHTML = "Person Details</br> First Name : " + person.firstName +
+                "</br> Last Name " + person.lastName +
+                "</br> Gender " + person.gender +
+                "</br> Age : " + person.age +
+                "</br> Full Name is " + person.getFullName();
+            hideBtn.style.display = "block";
+            showBtn.style.display = "none";
+        }
+
+        // Function to hide the details of the person object
+        const getRemove = () => {
+            x.style.display = "none";
+            hideBtn.style.display = "none";
+            showBtn.style.display = "block";
+        }
+    </script>    
+</body>
+</html>
