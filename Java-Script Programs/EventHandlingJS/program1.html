@@ -47,10 +47,14 @@
             document.formtime.timefield.value=time;
     }
     function fun2(){
-        document.getElementsByClassName('container')[0].style.backgroundColor="#f44336";
+        x=document.getElementsByClassName('container')[0];
+        x.style.backgroundColor="#f44336";
+        x.style.borderRadius="20% 0 20% 0";
     }
     function fun3(){
-        document.getElementsByClassName('container')[0].style.backgroundColor="#4caf50";
+        x=document.getElementsByClassName('container')[0];
+        x.style.backgroundColor="#4caf50";
+        x.style.borderRadius="0 20% 0 20%";
     }
     setInterval(get_time,1000);
 </script>
