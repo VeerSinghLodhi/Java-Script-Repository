@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Event:- onload()</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:400px;
+            width: 600px;
+            background-color: #4CAF50;
+            border-radius: 0 20% 0 20%;
+            box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
+            transition-timing-function: ease-in;
+            transition-duration: 1s;
+        }
+        .timetextfield{
+            width: 300px;
+            height: 40px;
+            font-size: 30px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<script>
+    function get_time(){
+        const date=new Date();
+        const time=date.getHours().toString()+ ":"+
+                date.getMinutes().toString()+ ":"+
+                date.getSeconds().toString();
+            document.formtime.timefield.value=time;
+    }
+    function fun2(){
+        document.getElementsByClassName('container')[0].style.backgroundColor="#f44336";
+    }
+    function fun3(){
+        document.getElementsByClassName('container')[0].style.backgroundColor="#4caf50";
+    }
+    setInterval(get_time,1000);
+</script>
+<body onload="get_time()">
+    <div class="container">
+        <form name="formtime">
+            <input onmouseover="fun2()" onmouseout="fun3()"  type="text" name="timefield" class="timetextfield" readonly>
+        </form>
+    </div>
+</body>
+</html>
