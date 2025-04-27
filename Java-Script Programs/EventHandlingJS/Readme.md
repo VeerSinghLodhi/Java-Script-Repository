@@ -49,3 +49,22 @@ Example: `body → onLoad → p, h1, table`
 
 ### Other Input Types
 Event inputs can also be triggered by voice, image recognition, or sensors depending on the device and technology used.
+
+## Example: Defining and Using an Event Handler
+
+### Step 1: Define a Function to Handle the Event
+```javascript
+function handleEvent() {
+  alert('Event triggered!');
+}
+```
+
+### Step 2: Attach the Function to an Event
+```javascript
+document.getElementById('myButton').addEventListener('click', handleEvent);
+```
+
+### HTML Structure for Reference
+```html
+<button id="myButton">Click Me</button>
+```
