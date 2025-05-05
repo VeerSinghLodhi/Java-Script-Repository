@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <script>
+        function fun1() {
+            event.preventDefault(); 
+            const age = document.getElementById('age');
+            const message = document.getElementById('show');
+            if (!age.checkValidity()) {
+                message.innerHTML = age.validationMessage;
+            }
+            else {
+                message.innerHTML = "Valid Age";
+            }
+        }
+    </script>
+    <form>
+        <div>
+            <label for="age">Enter you age</label>
+            <input type="number" name="age" id="age" min="0" max="150" required>
+            <input type="submit" onclick="fun1(event);">
+            <p id="show"></p>
+        </div>
+    </form>
+</body>
+
+</html>
