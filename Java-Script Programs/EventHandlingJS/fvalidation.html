@@ -20,6 +20,18 @@
                 message.innerHTML = "Valid Age";
             }
         }
+        const fun2=(event)=>{
+            event.preventDefault();
+            const num=document.getElementById('number');
+            const message=document.getElementById('show2');
+            message.innerHTML = num.validity.rangeOverflow ? "Value too large" : "Valid Number";
+        }
+        function fun3(event){
+            event.preventDefault();
+            const input=document.getElementById('num');
+            const message=document.getElementById('show3');
+            message.innerHTML=input.validity.rangeUnderflow ? "Value too small" : "Valid Number";
+        }
     </script>
     <form>
         <div>
@@ -28,6 +40,20 @@
             <input type="submit" onclick="fun1(event);">
             <p id="show"></p>
         </div>
+    </form>
+
+    <form>
+        <label for="number">Enter a number (max 200):</label>
+        <input type="number" name="number" id="number" max=200 required>
+        <input type="submit" value="OK" onclick="fun2(event);">
+        <p id="show2"></p>
+    </form>
+
+    <form>
+        <label for="num">Enter a number (min 200):</label>
+        <input type="number" name="num" id="num" min=200 required>
+        <input type="submit" value="OK" onclick="fun3(event);">
+        <p id="show3"></p>
     </form>
 </body>
 
